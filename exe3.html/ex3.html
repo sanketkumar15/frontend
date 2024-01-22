@@ -1,0 +1,54 @@
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+<title>Overlapping Divs</title>
+<style>
+  div {
+    height: 100px;
+    width: 200px;
+    border: 2px solid black;
+    margin-bottom: 10px;  
+  }
+
+  #div1 {
+    background-color: red;
+    top: 20px;
+    left: 20px;
+    z-index: 2;  
+    position:relative;
+  }
+
+  #div2 {
+    background-color: yellow;
+    top: -12px;
+    left: 69px;
+    position:relative
+  }
+
+  #div3 {
+    background-color: green;
+    top: -48px;
+    left: 136px;
+    position: relative;
+  }
+</style>
+</head>
+<body>
+  <div id="div1">Div 1</div>
+  <div id="div2">Div 2</div>
+  <div id="div3">Div 3</div>
+  <script>
+    const divs = document.querySelectorAll('div');
+
+divs.forEach(div => {
+  div.addEventListener('click', () => {
+    divs.forEach(otherDiv => {
+      otherDiv.style.zIndex = div === otherDiv ? 1 : 0;
+    });
+  });
+});
+
+  </script>
+</body>
+</html>

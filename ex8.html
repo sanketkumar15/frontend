@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="UTF-8" />
+<title> Multiply and divide of two numbers </title>
+</head>
+<body>
+<form>
+1st Number : <input type="text" id="1stNumber" />
+2nd Number: <input type="text" id="2ndNumber" /><br>
+<input type="button" onClick="multiplication()" Value="Multiply" /><br>
+<input type="button" onClick="division()" Value="Divide" />
+<p>The Result is : <br>
+<span id = "Result"></span>
+</p>
+</form>
+<script>
+    function multiplication() {
+        
+        n1 = document.getElementById("1stNumber").value;
+        n2 = document.getElementById("2ndNumber").value;
+    
+        document.getElementById("Result").innerHTML = n1 * n2;
+    }
+    
+    
+    function division() {
+        
+        n1 = document.getElementById("1stNumber").value;
+        n2 = document.getElementById("2ndNumber").value;
+    
+        document.getElementById("Result").innerHTML = n1 / n2;
+    } 
+</script>
+</body>
+</html>
